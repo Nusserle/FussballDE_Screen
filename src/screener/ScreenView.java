@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.nio.file.Paths;
 
+import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -66,9 +67,9 @@ public class ScreenView extends JFrame {
 
 	private void initComponents() {
 		labelVereinsspielplan = new JLabel("Vereins-URL");
-		fieldVereinsspielplan = new JTextField(25);
+		fieldVereinsspielplan = new JTextField(35);
 		labelFilename = new JLabel("Dateiname");
-		fieldFilename = new JTextField(10);
+		fieldFilename = new JTextField(35);
 		labelOutput = new JLabel("Ausgabe-Pfad");
 		fieldOutput = new JTextField(35);
 		fieldOutput.setText(output_path);

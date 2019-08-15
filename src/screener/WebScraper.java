@@ -1,8 +1,8 @@
 package screener;
 
 import java.io.File;
-import java.nio.file.FileSystems;
 import java.nio.file.Paths;
+import java.util.logging.Level;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -59,7 +59,7 @@ public class WebScraper {
 	String svd_verein = "http://www.fussball.de/verein/sv-denkingen-suedbaden/-/id/00ES8GN9CG0000AJVV0AG08LVUPGND5I#!/";
 
 	public WebScraper() throws InterruptedException {
-		System.setProperty("webdriver.gecko.driver", "lib/firefox/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", path_base + "/lib/geckodriver.exe");
 		// Main.getTabelleAndSpielplan(svd_1_homepage, "svd1");
 		// Main.getTabelleAndSpielplan(svd_2_homepage, "svd2");
 		// Main.getTabelleAndSpielplan(svd_3_homepage, "svd3");
@@ -92,14 +92,18 @@ public class WebScraper {
 	 * @throws InterruptedException
 	 */
 	public void getVereinsspielplan(String url, String mannschaft, String output_path) throws InterruptedException {
+		ScreenController.log.log(Level.INFO, "Init driver");
 		// Create a new instance of the Firefox driver
 		WebDriver driver = new FirefoxDriver();
+		ScreenController.log.log(Level.INFO, "Done");
 		driver.manage().window().setSize(new Dimension(1920, 1080));
-
+		
+		ScreenController.log.log(Level.INFO, "Get URL");
 		driver.get(url);
 		// Scroll to matchplan because of lazy-load of images
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		acceptCookies(driver, jse);
+		ScreenController.log.log(Level.INFO, "Accept Cookies");
 		jse.executeScript("document.body.style.webkitTransform = 'scale(2.5)'", new String[0]);
 		driver.manage().window().setSize(new Dimension(3000, 2000));
 		editTable(driver, "verein");
@@ -111,7 +115,7 @@ public class WebScraper {
 		// new String[0]);
 		Thread.sleep(2000);
 		jse.executeScript("window.scrollTo(0,0)", new String[0]);
-
+		ScreenController.log.log(Level.INFO, "Output");
 		try {
 
 			WebElement spielplan_verein_legende = driver.findElement(By.id("id-club-matchplan-table"));
@@ -123,7 +127,6 @@ public class WebScraper {
 				f.delete();
 			}
 			Files.copy(spielplanScreen, new File(output_path + "\\" + mannschaft + ".png"));
-			System.out.println("DONE");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
