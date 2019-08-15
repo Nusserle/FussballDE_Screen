@@ -2,6 +2,7 @@ package screener;
 
 import java.io.File;
 import java.nio.file.FileSystems;
+import java.nio.file.Paths;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -14,7 +15,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import com.google.common.io.Files;
 
 public class WebScraper {
-	private String path_base = "C:\\\\Users\\Tobias-PC\\Desktop\\svd\\tmp\\";
+	
+	String path_base = Paths.get(".").toAbsolutePath().normalize().toString();
 	
 	String jahr = "1920";
 
@@ -22,28 +24,28 @@ public class WebScraper {
 			+ "/team-id/011MIFD4J4000000VTVG0001VTR8C1K7#!/";
 	String svd_1_liga = "http://www.fussball.de/spieltagsuebersicht/landesliga-3-suedbaden-landesliga-herren-saison1920-suedbaden/-/staffel/027L3KLH4S000003VS5489B3VVRDDT7H-G#!/";
 
-	String svd_2_homepage = "http://www.fussball.de/mannschaft/sv-denkingen-2-sv-denkingen-suedbaden/-/saison/"
-			+ jahr + "/team-id/011MIEMTKO000000VTVG0001VTR8C1K7#!/";
+	String svd_2_homepage = "http://www.fussball.de/mannschaft/sv-denkingen-2-sv-denkingen-suedbaden/-/saison/" + jahr
+			+ "/team-id/011MIEMTKO000000VTVG0001VTR8C1K7#!/";
 	String svd_2_liga = "http://www.fussball.de/spieltagsuebersicht/kreisliga-a-staffel-3-bodensee-kreisliga-a-herren-saison1920-suedbaden/-/staffel/027JEQ1OIS00000BVS5489B4VU9HDBC9-G";
 
-	String svd_3_homepage = "http://www.fussball.de/mannschaft/sv-denkingen-3-sv-denkingen-suedbaden/-/saison/"
-			+ jahr + "/team-id/01HD2O7RKS000000VV0AG811VSJI13A5#!/";
+	String svd_3_homepage = "http://www.fussball.de/mannschaft/sv-denkingen-3-sv-denkingen-suedbaden/-/saison/" + jahr
+			+ "/team-id/01HD2O7RKS000000VV0AG811VSJI13A5#!/";
 	String svd_3_liga = "http://www.fussball.de/spieltagsuebersicht/kreisliga-c-staffel-4-bodensee-kreisliga-c-herren-saison1920-suedbaden/-/staffel/027L6FQJQK000000VS5489B4VTN1DS1I-G#!/";
 
-	String svd_damen_homepage = "http://www.fussball.de/mannschaft/sv-denkingen-sv-denkingen-suedbaden/-/saison/"
-			+ jahr + "/team-id/01L37UK7MO000000VV0AG80NVVQMG8U7#!/";
+	String svd_damen_homepage = "http://www.fussball.de/mannschaft/sv-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
+			+ "/team-id/01L37UK7MO000000VV0AG80NVVQMG8U7#!/";
 	String svd_damen_liga = "http://www.fussball.de/spieltagsuebersicht/frauen-bezirksliga-bodensee-bezirk-bodensee-frauen-bezirksliga-frauen-saison1920-suedbaden/-/staffel/027JEPS7N400000CVS5489B4VU9HDBC9-G#!/";
 
 	String svd_A_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
 			+ "/team-id/023PJ83GNS000000VS548984VVIKHNJO#!/";
-	String svd_B1_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/"
-			+ jahr + "/team-id/011MICE2H4000000VTVG0001VTR8C1K7#!/";
-	String svd_B2_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-2-sv-denkingen-suedbaden/-/saison/"
-			+ jahr + "/team-id/023PHU89G8000000VS548985VT5V9K59#!/";
-	String svd_C1_homepage = "http://www.fussball.de/mannschaft/sg-aach-linz-tsv-aach-linz-suedbaden/-/saison/"
-			+ jahr + "/team-id/01L23UFULO000000VV0AG811VV4PB99G#!/";
-	String svd_C2_homepage = "http://www.fussball.de/mannschaft/sg-aach-linz-2-tsv-aach-linz-suedbaden/-/saison/"
-			+ jahr + "/team-id/01L23V1FRO000000VV0AG811VV4PB99G#!/";
+	String svd_B1_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
+			+ "/team-id/011MICE2H4000000VTVG0001VTR8C1K7#!/";
+	String svd_B2_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-2-sv-denkingen-suedbaden/-/saison/" + jahr
+			+ "/team-id/023PHU89G8000000VS548985VT5V9K59#!/";
+	String svd_C1_homepage = "http://www.fussball.de/mannschaft/sg-aach-linz-tsv-aach-linz-suedbaden/-/saison/" + jahr
+			+ "/team-id/01L23UFULO000000VV0AG811VV4PB99G#!/";
+	String svd_C2_homepage = "http://www.fussball.de/mannschaft/sg-aach-linz-2-tsv-aach-linz-suedbaden/-/saison/" + jahr
+			+ "/team-id/01L23V1FRO000000VV0AG811VV4PB99G#!/";
 	String svd_D_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
 			+ "/team-id/011MIA57T0000000VTVG0001VTR8C1K7#!/";
 	String svd_E_homepage = "http://www.fussball.de/mannschaft/sv-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
@@ -64,7 +66,7 @@ public class WebScraper {
 		// Main.getTabelleAndSpielplan(svd_A_homepage, "svdA");
 		// Main.getTabelleAndSpielplan(svd_B1_homepage, "svdB1");
 		// Main.getTabelleAndSpielplan(svd_B2_homepage, "svdB2");
-		//WebScraper.getTabelleAndSpielplan(svd_C1_homepage, "svdC1");
+		// WebScraper.getTabelleAndSpielplan(svd_C1_homepage, "svdC1");
 		// Main.getTabelleAndSpielplan(svd_C2_homepage, "svdC2");
 		// Main.getTabelleAndSpielplan(svd_D_homepage, "svdD");
 		// Main.getTabelleAndSpielplan(svd_E_homepage, "svdE");
@@ -89,7 +91,7 @@ public class WebScraper {
 	 * @param string
 	 * @throws InterruptedException
 	 */
-	public void getVereinsspielplan(String url, String mannschaft) throws InterruptedException {
+	public void getVereinsspielplan(String url, String mannschaft, String output_path) throws InterruptedException {
 		// Create a new instance of the Firefox driver
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().setSize(new Dimension(1920, 1080));
@@ -116,12 +118,12 @@ public class WebScraper {
 			WebElement spielplan_verein = spielplan_verein_legende.findElement(By.className("table"));
 
 			File spielplanScreen = (File) ((TakesScreenshot) spielplan_verein).getScreenshotAs(OutputType.FILE);
-			File f = new File(path_base + mannschaft + "_spielplan.png");
+			File f = new File(output_path + mannschaft + ".png");
 			if (f.exists()) {
 				f.delete();
 			}
-			Files.copy(spielplanScreen, new File(path_base + mannschaft + "_spielplan.png"));
-
+			Files.copy(spielplanScreen, new File(output_path + "\\" + mannschaft + ".png"));
+			System.out.println("DONE");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
