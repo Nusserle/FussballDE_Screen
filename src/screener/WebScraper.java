@@ -70,13 +70,13 @@ public class WebScraper {
 
 	public WebScraper() throws InterruptedException {
 		System.setProperty("webdriver.gecko.driver", proj_path  + "/lib/geckodriver.exe");
-//		getTabelleAndSpielplan(svd_1_homepage, "svd1");
-//		getTabelleAndSpielplan(svd_2_homepage, "svd2");
-//		getTabelleAndSpielplan(svd_3_homepage, "svd3");
-//		getTabelleAndSpielplan(svd_A_homepage, "svdA");
-//		getTabelleAndSpielplan(svd_B1_homepage, "svdB1");
+		getTabelleAndSpielplan(svd_1_homepage, "svd1");
+		getTabelleAndSpielplan(svd_2_homepage, "svd2");
+		getTabelleAndSpielplan(svd_3_homepage, "svd3");
+		getTabelleAndSpielplan(svd_A_homepage, "svdA");
+		getTabelleAndSpielplan(svd_B1_homepage, "svdB1");
 		// Main.getTabelleAndSpielplan(svd_B2_homepage, "svdB2");
-//		getTabelleAndSpielplan(svd_C1_homepage, "svdC1");
+		getTabelleAndSpielplan(svd_C1_homepage, "svdC1");
 		// Main.getTabelleAndSpielplan(svd_C2_homepage, "svdC2");
 		// Main.getTabelleAndSpielplan(svd_D_homepage, "svdD");
 		// Main.getTabelleAndSpielplan(svd_E_homepage, "svdE");
@@ -84,12 +84,12 @@ public class WebScraper {
 		// WebScraper.getTabelleAndSpielplan(svd_damen_B_homepage, "svdDamenB");
 		// Main.getTabelleAndSpielplan(svd_damen_C_homepage, "svdDamenC");
 		
-//		getStaffelpielplan(svd_1_liga, "svd1");
-//		getStaffelpielplan(svd_2_liga, "svd2");
-//		getStaffelpielplan(svd_3_liga, "svd3");
-//		getStaffelpielplan(svd_damen_liga, "svdDamen");
+		getStaffelpielplan(svd_1_liga, "svd1");
+		getStaffelpielplan(svd_2_liga, "svd2");
+		getStaffelpielplan(svd_3_liga, "svd3");
+		getStaffelpielplan(svd_damen_liga, "svdDamen");
 		
-//		getVereinsspielplan(svd_verein, "vereinsspielplan");
+		getVereinsspielplan(svd_verein, "vereinsspielplan");
 
 	}
 
@@ -161,7 +161,10 @@ public class WebScraper {
 		jse.executeScript("window.scrollTo(0,document.body.scrollHeight);", new String[0]);
 		jse.executeScript("document.getElementById('id-team-matchplan-table').scrollIntoView();",
 		 new String[0]);
-		Thread.sleep(30000);
+		jse.executeScript("document.body.style.webkitTransform = 'scale(1.0)'", new String[0]);
+		Thread.sleep(2000);
+		jse.executeScript("document.body.style.webkitTransform = 'scale(2.5)'", new String[0]);
+		Thread.sleep(3000);
 		jse.executeScript("window.scrollTo(0,0)", new String[0]);
 
 		try {
@@ -264,19 +267,22 @@ public class WebScraper {
 		// Scroll to matchplan because of lazy-load of images
 		if (tag.equals("liga")) {
 			JavascriptExecutor jse = (JavascriptExecutor) driver;
+
+			// href = el.getElementsByClassName('nav-next')[0]; href.children[0].click() 
 			jse.executeScript(
 					"el = document.getElementById('matches'); node = el.querySelectorAll('[href]'); node[1].click(); ",
 					new String[0]);
 			Thread.sleep(4500);
-			// jse.executeScript(
-			// "el = document.getElementById('matches'); next =
-			// el.getElementsByClassName('fixtures-matches-table'); node =
-			// next[0].getElementsByClassName('nav-next'); n =
-			// node[0].querySelectorAll('[href]'); n[0].click();",
-			// new String[0]);
+			
+			// Comment the following script if past games should be screenshoted otherwise next week games are selected
+			 jse.executeScript(
+			 "el = document.getElementById('matches'); next = el.getElementsByClassName('fixtures-matches-table'); node = next[0].getElementsByClassName('nav-next'); n = node[0].querySelectorAll('[href]'); n[0].click();",
+			 new String[0]);
 			Thread.sleep(2500);
+			
+			// livetickers = el.getElementsByClassName('info-text sub'); function delLive() { for (i = 0; i < livetickers.length; i++) { livetickers[i].parentNode.removeChild(livetickers[i])} }; for (i=0; i<7; i++) {delLive(); }
 			jse.executeScript(
-					"el = document.getElementsByClassName('table').item(0); head = el.rows[0]; head.deleteCell(4); head.deleteCell(4); head.deleteCell(4); head.deleteCell(4); rem = el.getElementsByClassName('column-detail'); while(rem[0]) {rem[0].parentNode.removeChild(rem[0])}",
+					"el = document.getElementsByClassName('table').item(0); head = el.rows[0]; head.deleteCell(4); head.deleteCell(4); head.deleteCell(4); head.deleteCell(4); rem = el.getElementsByClassName('column-detail'); while(rem[0]) {rem[0].parentNode.removeChild(rem[0])};  ",
 					new String[0]);
 			Thread.sleep(2500);
 		} else if (tag.equals("svd")) {
