@@ -1,6 +1,7 @@
 package screener;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.logging.Level;
 
@@ -16,25 +17,34 @@ import com.google.common.io.Files;
 
 public class WebScraper {
 	
-	String path_base = Paths.get(".").toAbsolutePath().normalize().toString();
+	public static void main(String[] args) throws InterruptedException, SecurityException, IOException {
+		
+		if (System.getProperty("webdriver.firefox.bin") == null) {
+			  System.setProperty("webdriver.firefox.bin", "C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+			}
+
+		WebScraper w = new WebScraper();
+	}
 	
-	String jahr = "1920";
+	String proj_path = Paths.get(".").toAbsolutePath().normalize().toString();
+	String path_base = "c:\\\\tmp\\";
+	String jahr = "2021";
 
 	String svd_1_homepage = "http://www.fussball.de/mannschaft/sv-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
 			+ "/team-id/011MIFD4J4000000VTVG0001VTR8C1K7#!/";
-	String svd_1_liga = "http://www.fussball.de/spieltagsuebersicht/landesliga-3-suedbaden-landesliga-herren-saison1920-suedbaden/-/staffel/027L3KLH4S000003VS5489B3VVRDDT7H-G#!/";
+	String svd_1_liga = "http://www.fussball.de/spieltagsuebersicht/landesliga-3-suedbaden-landesliga-herren-saison2021-suedbaden/-/staffel/02BEEK56T8000004VS5489B4VUBEGM7L-G#!/";
 
 	String svd_2_homepage = "http://www.fussball.de/mannschaft/sv-denkingen-2-sv-denkingen-suedbaden/-/saison/" + jahr
 			+ "/team-id/011MIEMTKO000000VTVG0001VTR8C1K7#!/";
-	String svd_2_liga = "http://www.fussball.de/spieltagsuebersicht/kreisliga-a-staffel-3-bodensee-kreisliga-a-herren-saison1920-suedbaden/-/staffel/027JEQ1OIS00000BVS5489B4VU9HDBC9-G";
+	String svd_2_liga = "http://www.fussball.de/spieltagsuebersicht/kreisliga-a-staffel-3-bodensee-kreisliga-a-herren-saison2021-suedbaden/-/staffel/02BF5GFT6C000008VS5489B4VUBEGM7L-G#!/";
 
 	String svd_3_homepage = "http://www.fussball.de/mannschaft/sv-denkingen-3-sv-denkingen-suedbaden/-/saison/" + jahr
 			+ "/team-id/01HD2O7RKS000000VV0AG811VSJI13A5#!/";
-	String svd_3_liga = "http://www.fussball.de/spieltagsuebersicht/kreisliga-c-staffel-4-bodensee-kreisliga-c-herren-saison1920-suedbaden/-/staffel/027L6FQJQK000000VS5489B4VTN1DS1I-G#!/";
+	String svd_3_liga = "http://www.fussball.de/spieltagsuebersicht/kreisliga-c-staffel-3-bodensee-kreisliga-c-herren-saison2021-suedbaden/-/staffel/02BF5IL6QS000009VS5489B4VUBEGM7L-G#!/";
 
 	String svd_damen_homepage = "http://www.fussball.de/mannschaft/sv-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
 			+ "/team-id/01L37UK7MO000000VV0AG80NVVQMG8U7#!/";
-	String svd_damen_liga = "http://www.fussball.de/spieltagsuebersicht/frauen-bezirksliga-bodensee-bezirk-bodensee-frauen-bezirksliga-frauen-saison1920-suedbaden/-/staffel/027JEPS7N400000CVS5489B4VU9HDBC9-G#!/";
+	String svd_damen_liga = "http://www.fussball.de/spieltagsuebersicht/frauen-bezirksliga-bodensee-bezirk-bodensee-frauen-bezirksliga-frauen-saison2021-suedbaden/-/staffel/02BF5L6BL4000009VS5489B4VUBEGM7L-G#!/";
 
 	String svd_A_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
 			+ "/team-id/023PJ83GNS000000VS548984VVIKHNJO#!/";
@@ -59,27 +69,27 @@ public class WebScraper {
 	String svd_verein = "http://www.fussball.de/verein/sv-denkingen-suedbaden/-/id/00ES8GN9CG0000AJVV0AG08LVUPGND5I#!/";
 
 	public WebScraper() throws InterruptedException {
-		System.setProperty("webdriver.gecko.driver", path_base + "/lib/geckodriver.exe");
-		// Main.getTabelleAndSpielplan(svd_1_homepage, "svd1");
-		// Main.getTabelleAndSpielplan(svd_2_homepage, "svd2");
-		// Main.getTabelleAndSpielplan(svd_3_homepage, "svd3");
-		// Main.getTabelleAndSpielplan(svd_A_homepage, "svdA");
-		// Main.getTabelleAndSpielplan(svd_B1_homepage, "svdB1");
+		System.setProperty("webdriver.gecko.driver", proj_path  + "/lib/geckodriver.exe");
+//		getTabelleAndSpielplan(svd_1_homepage, "svd1");
+//		getTabelleAndSpielplan(svd_2_homepage, "svd2");
+//		getTabelleAndSpielplan(svd_3_homepage, "svd3");
+//		getTabelleAndSpielplan(svd_A_homepage, "svdA");
+//		getTabelleAndSpielplan(svd_B1_homepage, "svdB1");
 		// Main.getTabelleAndSpielplan(svd_B2_homepage, "svdB2");
-		// WebScraper.getTabelleAndSpielplan(svd_C1_homepage, "svdC1");
+//		getTabelleAndSpielplan(svd_C1_homepage, "svdC1");
 		// Main.getTabelleAndSpielplan(svd_C2_homepage, "svdC2");
 		// Main.getTabelleAndSpielplan(svd_D_homepage, "svdD");
 		// Main.getTabelleAndSpielplan(svd_E_homepage, "svdE");
-		// WebScraper.getTabelleAndSpielplan(svd_damen_homepage, "svdDamen1");
+		getTabelleAndSpielplan(svd_damen_homepage, "svdDamen1");
 		// WebScraper.getTabelleAndSpielplan(svd_damen_B_homepage, "svdDamenB");
-		//// Main.getTabelleAndSpielplan(svd_damen_C_homepage, "svdDamenC");
-		//
-		// WebScraper.getStaffelpielplan(svd_1_liga, "svd1");
-		// WebScraper.getStaffelpielplan(svd_2_liga, "svd2");
-		// WebScraper.getStaffelpielplan(svd_3_liga, "svd3");
-		// WebScraper.getStaffelpielplan(svd_damen_liga, "svdDamen");
-		//
-		// WebScraper.getVereinsspielplan(svd_verein, "vereinsspielplan");
+		// Main.getTabelleAndSpielplan(svd_damen_C_homepage, "svdDamenC");
+		
+//		getStaffelpielplan(svd_1_liga, "svd1");
+//		getStaffelpielplan(svd_2_liga, "svd2");
+//		getStaffelpielplan(svd_3_liga, "svd3");
+//		getStaffelpielplan(svd_damen_liga, "svdDamen");
+		
+//		getVereinsspielplan(svd_verein, "vereinsspielplan");
 
 	}
 
@@ -91,19 +101,17 @@ public class WebScraper {
 	 * @param string
 	 * @throws InterruptedException
 	 */
-	public void getVereinsspielplan(String url, String mannschaft, String output_path) throws InterruptedException {
-		ScreenController.log.log(Level.INFO, "Init driver");
+	public void getVereinsspielplan(String url, String mannschaft) throws InterruptedException {
+
 		// Create a new instance of the Firefox driver
 		WebDriver driver = new FirefoxDriver();
-		ScreenController.log.log(Level.INFO, "Done");
+
 		driver.manage().window().setSize(new Dimension(1920, 1080));
-		
-		ScreenController.log.log(Level.INFO, "Get URL");
+
 		driver.get(url);
 		// Scroll to matchplan because of lazy-load of images
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		acceptCookies(driver, jse);
-		ScreenController.log.log(Level.INFO, "Accept Cookies");
 		jse.executeScript("document.body.style.webkitTransform = 'scale(2.5)'", new String[0]);
 		driver.manage().window().setSize(new Dimension(3000, 2000));
 		editTable(driver, "verein");
@@ -115,18 +123,18 @@ public class WebScraper {
 		// new String[0]);
 		Thread.sleep(2000);
 		jse.executeScript("window.scrollTo(0,0)", new String[0]);
-		ScreenController.log.log(Level.INFO, "Output");
+
 		try {
 
 			WebElement spielplan_verein_legende = driver.findElement(By.id("id-club-matchplan-table"));
 			WebElement spielplan_verein = spielplan_verein_legende.findElement(By.className("table"));
 
 			File spielplanScreen = (File) ((TakesScreenshot) spielplan_verein).getScreenshotAs(OutputType.FILE);
-			File f = new File(output_path + mannschaft + ".png");
+			File f = new File(path_base + mannschaft + ".png");
 			if (f.exists()) {
 				f.delete();
 			}
-			Files.copy(spielplanScreen, new File(output_path + "\\" + mannschaft + ".png"));
+			Files.copy(spielplanScreen, new File(path_base + "\\" + mannschaft + ".png"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -139,7 +147,7 @@ public class WebScraper {
 	 * @param url
 	 *            Fussball.de Link to Denkingen 1
 	 */
-	private void getTabelleAndSpielplan(String url, String mannschaft) throws InterruptedException {
+	void getTabelleAndSpielplan(String url, String mannschaft) throws InterruptedException {
 		// Create a new instance of the Firefox driver
 		WebDriver driver = new FirefoxDriver();
 		driver.get(url);
@@ -151,9 +159,9 @@ public class WebScraper {
 		acceptCookies(driver, jse);
 		editTable(driver, "svd");
 		jse.executeScript("window.scrollTo(0,document.body.scrollHeight);", new String[0]);
-		// jse.executeScript("document.getElementById('id-team-matchplan-table').scrollIntoView();",
-		// new String[0]);
-		Thread.sleep(3000);
+		jse.executeScript("document.getElementById('id-team-matchplan-table').scrollIntoView();",
+		 new String[0]);
+		Thread.sleep(30000);
 		jse.executeScript("window.scrollTo(0,0)", new String[0]);
 
 		try {
@@ -281,10 +289,10 @@ public class WebScraper {
 			jse.executeScript(
 					"el = document.getElementById('id-team-matchplan'); node = el.querySelectorAll('[data-tracking-name]'); node[1].click(); ",
 					new String[0]);
-			Thread.sleep(500);
+			Thread.sleep(5000);
 
 			jse.executeScript(
-					"el = document.getElementById('id-team-matchplan'); table = el.getElementsByClassName('table').item(0); for (var i = 0, row; row = table.rows[i]; i++) { if ((i+1) % 3 == 0) {row.deleteCell(2);}}; rem = table.getElementsByClassName('column-detail'); while(rem[0]) {rem[0].parentNode.removeChild(rem[0])}; for (var i=0, row; row=table.rows[i]; i++) { if (i > 14) { table.deleteRow(i) }} ",
+					"el = document.getElementById('id-team-matchplan'); table = el.getElementsByClassName('table').item(0); for (var i = 0, row; row = table.rows[i]; i++) { if ((i+1) % 3 == 0) {row.deleteCell(2);}}; rem = table.getElementsByClassName('column-detail'); while(rem[0]) {rem[0].parentNode.removeChild(rem[0])}; for (var i=0, row; row=table.rows[i]; i++) { if (i > 14) { table.deleteRow(i) }};",
 					new String[0]);
 			Thread.sleep(500);
 

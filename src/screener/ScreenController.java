@@ -17,7 +17,7 @@ public class ScreenController {
 
 	public ScreenController(ScreenView view, WebScraper scrap) throws SecurityException, IOException {
 		log = Logger.getLogger("logger");
-		createLog();
+		// createLog();
 		this.view = view;
 		this.scrap = scrap;
 
@@ -42,7 +42,7 @@ public class ScreenController {
 				String output_path = view.getOutputPath();
 				String mannschaft = view.getFilename();
 				try {
-					scrap.getVereinsspielplan(vereinspielplanURL, mannschaft, output_path);
+					 scrap.getVereinsspielplan(vereinspielplanURL, mannschaft);
 				} catch (InterruptedException e1) {
 					log.log(Level.SEVERE, "getVereinsspielplan failed", e1);
 					e1.printStackTrace();
@@ -53,9 +53,9 @@ public class ScreenController {
 		}
 	}
 	
-	public void createLog() throws SecurityException, IOException {
-		FileHandler fh = new FileHandler("logs/error.log", 10000000, 20);
-		fh.setFormatter(new SimpleFormatter());
-		log.addHandler(fh);
-	}
+//	public void createLog() throws SecurityException, IOException {
+//		FileHandler fh = new FileHandler("logs/error.log", 10000000, 20);
+//		fh.setFormatter(new SimpleFormatter());
+//		log.addHandler(fh);
+//	}
 }
