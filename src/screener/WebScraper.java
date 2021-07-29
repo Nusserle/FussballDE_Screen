@@ -157,6 +157,7 @@ public class WebScraper {
 		jse.executeScript("document.body.style.webkitTransform = 'scale(2.5)'", new String[0]);
 		driver.manage().window().setSize(new Dimension(3000, 2000));
 		acceptCookies(driver, jse);
+		Thread.sleep(10000);
 		editTable(driver, "svd");
 		jse.executeScript("window.scrollTo(0,document.body.scrollHeight);", new String[0]);
 		jse.executeScript("document.getElementById('id-team-matchplan-table').scrollIntoView();",
@@ -310,13 +311,9 @@ public class WebScraper {
 		}
 	}
 
-	private void acceptCookies(WebDriver driver, JavascriptExecutor jse) {
-		if (driver.findElement(By.className("content")).isDisplayed()) {
-			jse.executeScript("document.getElementsByClassName('cookie-advise-accept').item(0).click()", new String[0]);
-		}
+	private void acceptCookies(WebDriver driver, JavascriptExecutor jse) throws InterruptedException {
+		String rmCookies = "document.getElementById('usercentrics-root').shadowRoot.querySelector('.xjzZz').click()";
+		Thread.sleep(2500);
+		jse.executeScript(rmCookies, (Object) new String[0]);
 	}
-
-	// el = document.getElementsByClassName('table').item(0)
-	// TABLE
-
 }
