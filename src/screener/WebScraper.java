@@ -46,37 +46,58 @@ public class WebScraper {
 			+ "/team-id/01L37UK7MO000000VV0AG80NVVQMG8U7#!/";
 	String damen_liga = "http://www.fussball.de/spieltagsuebersicht/frauen-bezirksliga-bodensee-bezirk-bodensee-frauen-bezirksliga-frauen-saison2122-suedbaden/-/staffel/02ETOC7EQ8000008VS5489B4VT8SVH36-G#!/";
 	String A_homepage_temp = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/2122/team-id/023PJ83GNS000000VS548984VVIKHNJO#!/";
-	String A_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
-			+ "/team-id//team-id/023PJ83GNS000000VS548984VVIKHNJO#!/";
 	String B_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
 			+ "/team-id/011MICE2H4000000VTVG0001VTR8C1K7#!/";
 	String C1_homepage = "http://www.fussball.de/mannschaft/sg-aach-linz-tsv-aach-linz-suedbaden/-/saison/" + jahr
 			+ "/team-id/01L23UFULO000000VV0AG811VV4PB99G#!/";
 	String C2_homepage = "http://www.fussball.de/mannschaft/sg-aach-linz-2-tsv-aach-linz-suedbaden/-/saison/" + jahr
 			+ "/team-id/01L23V1FRO000000VV0AG811VV4PB99G#!/";
-	String D_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
+	String D1_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
 			+ "/team-id/02BCT258HK000000VS5489B2VU21J0QC#!/";
+
+	String D2_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
+			+ "/team-id/02BCT3R5H0000000VS5489B2VU21J0QC#!/";
+
+	String E1_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
+			+ "/team-id/02BE3U1S0K000000VS5489B2VU21J0QC#!/";
+
+	String E2_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
+			+ "/team-id/02BE3UD9EC000000VS5489B2VU21J0QC#!/";
+
+	String BDamen_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
+			+ "/team-id/011MIFA7S4000000VTVG0001VTR8C1K7#!/";
+
+	String DDamen_homepage = "http://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
+			+ "/team-id/02EQ2SPAEC000000VS5489B1VT0RKM5V#!/";
+
+
 
 	String verein = "http://www.fussball.de/verein/sv-denkingen-suedbaden/-/id/00ES8GN9CG0000AJVV0AG08LVUPGND5I#!/";
 
 	public WebScraper() throws InterruptedException {
 		System.setProperty("webdriver.gecko.driver", proj_path  + "/lib/geckodriver.exe");
 		getTabelleAndSpielplan(erste_homepage, "svd1");
-//		getTabelleAndSpielplan(zweite_homepage, "svd2");
-//		getTabelleAndSpielplan(dritte_homepage, "svd3");
-//		getTabelleAndSpielplan(damen_homepage, "svdDamen");
-//		getTabelleAndSpielplan(A_homepage_temp, "svdA");
-//		getTabelleAndSpielplan(B_homepage, "svdB");
-//		getTabelleAndSpielplan(C1_homepage, "svdC1");
-//		getTabelleAndSpielplan(C2_homepage, "svdC2");
-//		getTabelleAndSpielplan(D_homepage, "svdD");
+		getTabelleAndSpielplan(zweite_homepage, "svd2");
+		getTabelleAndSpielplan(dritte_homepage, "svd3");
+		getTabelleAndSpielplan(damen_homepage, "svdDamen");
+		getTabelleAndSpielplan(A_homepage_temp, "svdA");
+		getTabelleAndSpielplan(B_homepage, "svdB");
+		getTabelleAndSpielplan(C1_homepage, "svdC1");
+		getTabelleAndSpielplan(C2_homepage, "svdC2");
+		getTabelleAndSpielplan(D1_homepage, "svdD1");
+		getTabelleAndSpielplan(D2_homepage, "svdD2");
+		getTabelleAndSpielplan(E1_homepage, "svdE1");
+		getTabelleAndSpielplan(E2_homepage, "svdE2");
 
-//		getStaffelpielplan(erste_liga, "svd1");
-//		getStaffelpielplan(zweite_liga, "svd2");
-//		getStaffelpielplan(dritte_liga, "svd3");
-//		getStaffelpielplan(damen_liga, "svdDamen");
-		
-//		getVereinsspielplan(verein, "vereinsspielplan");
+		getTabelleAndSpielplan(BDamen_homepage, "svdBDamen");
+		getTabelleAndSpielplan(DDamen_homepage, "svdDDamen");
+
+		getStaffelpielplan(erste_liga, "svd1");
+		getStaffelpielplan(zweite_liga, "svd2");
+		getStaffelpielplan(dritte_liga, "svd3");
+		getStaffelpielplan(damen_liga, "svdDamen");
+
+		getVereinsspielplan(verein, "vereinsspielplan");
 
 	}
 
@@ -262,9 +283,9 @@ public class WebScraper {
 			Thread.sleep(4500);
 			
 			// Comment the following script if past games should be screenshoted otherwise next week games are selected
-//			 jse.executeScript(
-//			 "el = document.getElementById('matches'); next = el.getElementsByClassName('fixtures-matches-table'); node = next[0].getElementsByClassName('nav-next'); n = node[0].querySelectorAll('[href]'); n[0].click();",
-//			 new String[0]);
+			 jse.executeScript(
+			 "el = document.getElementById('matches'); next = el.getElementsByClassName('fixtures-matches-table'); node = next[0].getElementsByClassName('nav-next'); n = node[0].querySelectorAll('[href]'); n[0].click();",
+			 new String[0]);
 			Thread.sleep(2500);
 			
 			// livetickers = el.getElementsByClassName('info-text sub'); function delLive() { for (i = 0; i < livetickers.length; i++) { livetickers[i].parentNode.removeChild(livetickers[i])} }; for (i=0; i<7; i++) {delLive(); }
