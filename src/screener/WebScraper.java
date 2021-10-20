@@ -312,15 +312,37 @@ public class WebScraper {
 
 		} else if (tag.equals("verein")) {
 			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("document.querySelectorAll('a.ng-scope')[2].click()", (Object) new String[0]);
+			Thread.sleep(2000);
+			jse.executeScript("tbl = document.querySelectorAll('table.ng-scope.ng-isolate-scope')[2];" +
+					"date = new Date().getDate();" +
+					"tbl.querySelectorAll('button.btn')[((date+5)%31)+6].click();", (Object) new String[0]);
+			Thread.sleep(2000);
+			jse.executeScript("document.querySelectorAll('button.button.button-primary')[11].click()", (Object) new String[0]);
+			Thread.sleep(2000);
 			jse.executeScript(
-					"focus = document.getElementById('id-club-matchplan-table'); el = focus.getElementsByClassName('table').item(0); for (var i = 0, row; row = el.rows[i]; i++) { if ((i+1)% 3 == 0) { row.deleteCell(2) } else if (i%3 == 0 && i != 0) {row.deleteCell(5)}};",
-					new String[0]);
+							"focus = document.getElementById('id-club-matchplan-table'); " +
+							"el = focus.getElementsByClassName('table').item(0); " +
+							"for (var i = 0, row; row = el.rows[i]; i++) { " +
+							"if ((i+1)% 3 == 0) { row.deleteCell(2) } " +
+							"else if (i%3 == 0 && i != 0) {row.deleteCell(5)}};" +
+							"document.querySelector('table.table-striped.table-full-width').deleteTFoot();",  (Object) new String[0]);
+
+
+
 		}
+		Thread.sleep(1000);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		adjustFont(driver, jse, 0.65);
 	}
 
 	private void acceptCookies(WebDriver driver, JavascriptExecutor jse) throws InterruptedException {
-		String rmCookies = "document.getElementById('usercentrics-root').shadowRoot.querySelector('.xjzZz').click()";
+		String rmCookies = "document.getElementById('usercentrics-root').shadowRoot.querySelector('.cgpWRV').click()";
 		Thread.sleep(3500);
 		jse.executeScript(rmCookies, (Object) new String[0]);
+	}
+
+	private void adjustFont(WebDriver driver, JavascriptExecutor jse, double percent) {
+		jse.executeScript("document.body.style.fontSizeAdjust=" + percent + ";",  (Object) new String[0]);
 	}
 }
