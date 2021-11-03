@@ -5,31 +5,27 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.logging.Level;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import com.google.common.io.Files;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 
 public class WebScraper {
-	
+
+	private FirefoxDriver driver;
+
 	public static void main(String[] args) throws InterruptedException, SecurityException, IOException {
 		
 		if (System.getProperty("webdriver.firefox.bin") == null) {
 			  System.setProperty("webdriver.firefox.bin", "C:\\Program Files\\Mozilla Firefox\\firefox.exe");
 			}
-
-		WebScraper w = new WebScraper();
+		new WebScraper();
 	}
 	
 	String proj_path = Paths.get(".").toAbsolutePath().normalize().toString();
 	String path_base = "c:\\\\tmp\\";
 	String jahr = "2021";
-
 	String erste_homepage = "http://www.fussball.de/mannschaft/sv-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
 			+ "/team-id/011MIFD4J4000000VTVG0001VTR8C1K7#!/";
 	String erste_liga = "http://www.fussball.de/spieltagsuebersicht/landesliga-3-suedbaden-landesliga-herren-saison2122-suedbaden/-/staffel/02EV3HAGHS000004VS5489B3VUK1A2F6-G#!/";
@@ -76,6 +72,13 @@ public class WebScraper {
 
 	public WebScraper() throws InterruptedException {
 		System.setProperty("webdriver.gecko.driver", proj_path  + "/lib/geckodriver.exe");
+		FirefoxProfile profile = new FirefoxProfile(new File(proj_path + "/lib/firefox/ff_profile"));
+		FirefoxOptions options = new FirefoxOptions();
+		options.setProfile(profile);
+		this.driver = new FirefoxDriver(options);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		acceptCookies(driver, jse);
+
 		getTabelleAndSpielplan(erste_homepage, "svd1");
 		getTabelleAndSpielplan(zweite_homepage, "svd2");
 		getTabelleAndSpielplan(dritte_homepage, "svd3");
@@ -99,6 +102,7 @@ public class WebScraper {
 
 		getVereinsspielplan(verein, "vereinsspielplan");
 
+		driver.quit();
 	}
 
 	/**
@@ -110,16 +114,12 @@ public class WebScraper {
 	 * @throws InterruptedException
 	 */
 	public void getVereinsspielplan(String url, String mannschaft) throws InterruptedException {
-
 		// Create a new instance of the Firefox driver
-		WebDriver driver = new FirefoxDriver();
-
 		driver.manage().window().setSize(new Dimension(1920, 1080));
 
 		driver.get(url);
 		// Scroll to matchplan because of lazy-load of images
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		acceptCookies(driver, jse);
 		jse.executeScript("document.body.style.webkitTransform = 'scale(2.5)'", (Object) new String[0]);
 		driver.manage().window().setSize(new Dimension(3000, 2000));
 		editTable(driver, "verein");
@@ -146,7 +146,6 @@ public class WebScraper {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		driver.close();
 	}
 
 	/**
@@ -156,15 +155,12 @@ public class WebScraper {
 	 *            Fussball.de Link to Denkingen 1
 	 */
 	void getTabelleAndSpielplan(String url, String mannschaft) throws InterruptedException {
-		// Create a new instance of the Firefox driver
-		WebDriver driver = new FirefoxDriver();
 		driver.get(url);
 		// Scroll to matchplan because of lazy-load of images
 
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("document.body.style.webkitTransform = 'scale(2.5)'", (Object) new String[0]);
 		driver.manage().window().setSize(new Dimension(3000, 2000));
-		acceptCookies(driver, jse);
 		Thread.sleep(10000);
 		editTable(driver, "svd");
 		jse.executeScript("window.scrollTo(0,document.body.scrollHeight);", (Object) new String[0]);
@@ -222,8 +218,6 @@ public class WebScraper {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		driver.close();
 	}
 
 	/**
@@ -233,13 +227,9 @@ public class WebScraper {
 	 * Fussball.de Link to Landesliga 3
 	 */
 	private void getStaffelpielplan(String url, String mannschaft) throws InterruptedException {
-		// Create a new instance of the Firefox driver
-		WebDriver driver = new FirefoxDriver();
 		driver.get(url);
-
 		// Scroll to matchplan because of lazy-load of images
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		acceptCookies(driver, jse);
 		editTable(driver, "liga");
 		jse.executeScript("document.body.style.webkitTransform = 'scale(2.5)'", (Object) new String[0]);
 		driver.manage().window().setSize(new Dimension(3000, 2000));
@@ -264,14 +254,12 @@ public class WebScraper {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		driver.close();
 	}
 
 	@SuppressWarnings("all")
 	private void editTable(WebDriver driver, String tag) throws InterruptedException {
 		// Create a new instance of the Firefox driver
-
+		Thread.sleep(2500);
 		// Scroll to matchplan because of lazy-load of images
 		if (tag.equals("liga")) {
 			JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -337,6 +325,8 @@ public class WebScraper {
 	}
 
 	private void acceptCookies(WebDriver driver, JavascriptExecutor jse) throws InterruptedException {
+		driver.get("https://www.fussball.de");
+		Thread.sleep(2000);
 		String rmCookies = "document.getElementById('usercentrics-root').shadowRoot.querySelector('.cgpWRV').click()";
 		Thread.sleep(3500);
 		jse.executeScript(rmCookies, (Object) new String[0]);
