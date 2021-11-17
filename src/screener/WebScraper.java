@@ -161,7 +161,7 @@ public class WebScraper {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("document.body.style.webkitTransform = 'scale(2.5)'", (Object) new String[0]);
 		driver.manage().window().setSize(new Dimension(3000, 2000));
-		Thread.sleep(10000);
+		Thread.sleep(3000);
 		editTable(driver, "svd");
 		jse.executeScript("window.scrollTo(0,document.body.scrollHeight);", (Object) new String[0]);
 		jse.executeScript("document.getElementById('id-team-matchplan-table').scrollIntoView();",
@@ -268,7 +268,7 @@ public class WebScraper {
 			jse.executeScript(
 					"el = document.getElementById('matches'); node = el.querySelectorAll('[href]'); node[1].click(); ",
 					new String[0]);
-			Thread.sleep(4500);
+			Thread.sleep(3000);
 			
 			// Comment the following script if past games should be screenshoted otherwise next week games are selected
 			 jse.executeScript(
@@ -291,7 +291,7 @@ public class WebScraper {
 			jse.executeScript(
 					"el = document.getElementById('id-team-matchplan'); node = el.querySelectorAll('[data-tracking-name]'); node[1].click(); ",
 					new String[0]);
-			Thread.sleep(5000);
+			Thread.sleep(3000);
 
 			jse.executeScript(
 					"el = document.getElementById('id-team-matchplan'); table = el.getElementsByClassName('table').item(0); for (var i = 0, row; row = table.rows[i]; i++) { if ((i+1) % 3 == 0) {row.deleteCell(2);}}; rem = table.getElementsByClassName('column-detail'); while(rem[0]) {rem[0].parentNode.removeChild(rem[0])}; for (var i=table.rows.length; i > 0; i--) { if (i > 25) { table.deleteRow(i-1) }}; el.getElementsByClassName('tab-group')[0].remove()",
@@ -328,7 +328,7 @@ public class WebScraper {
 		driver.get("https://www.fussball.de");
 		Thread.sleep(2000);
 		String rmCookies = "document.getElementById('usercentrics-root').shadowRoot.querySelector('.cgpWRV').click()";
-		Thread.sleep(3500);
+		Thread.sleep(3000);
 		jse.executeScript(rmCookies, (Object) new String[0]);
 	}
 
