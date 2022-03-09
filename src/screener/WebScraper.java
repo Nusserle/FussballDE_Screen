@@ -91,7 +91,6 @@ public class WebScraper {
 		getTabelleAndSpielplan(D2_homepage, "svdD2");
 		getTabelleAndSpielplan(E1_homepage, "svdE1");
 		getTabelleAndSpielplan(E2_homepage, "svdE2");
-
 		getTabelleAndSpielplan(BDamen_homepage, "svdBDamen");
 		getTabelleAndSpielplan(DDamen_homepage, "svdDDamen");
 
@@ -327,7 +326,7 @@ public class WebScraper {
 	private void acceptCookies(WebDriver driver, JavascriptExecutor jse) throws InterruptedException {
 		driver.get("https://www.fussball.de");
 		Thread.sleep(2000);
-		String rmCookies = "document.getElementById('usercentrics-root').shadowRoot.querySelector('.cgpWRV').click()";
+		String rmCookies = "document.getElementById('usercentrics-root').shadowRoot.querySelector('.bpwvLJ').click()";
 		Thread.sleep(3000);
 		jse.executeScript(rmCookies, (Object) new String[0]);
 	}
