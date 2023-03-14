@@ -37,33 +37,20 @@ public class WebScraper {
 	String dritte_liga = "https://www.fussball.de/spieltagsuebersicht/kreisliga-c-staffel-3-bodensee-kreisliga-c-herren-saison2223-suedbaden/-/staffel/02IL9VQ5V000000AVS5489B3VVETK79U-G#!/";
 
 	String damen_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-denkingen-tsv-aach-linz-suedbaden/-/saison/" + jahr + "/team-id/011MICT7OC000000VTVG0001VTR8C1K7#!/";
-
 	String damen_liga = "https://www.fussball.de/spieltagsuebersicht/landesliga-frauen-staffel-2-suedbaden-frauen-landesliga-frauen-saison2223-suedbaden/-/staffel/02IIVLNF3O00000EVS5489B4VS7CGIFK-G#!/";
 
-	String A_homepage_temp = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/2122/team-id/023PJ83GNS000000VS548984VVIKHNJO#!/";
-	String B_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
-			+ "/team-id/011MICE2H4000000VTVG0001VTR8C1K7#!/";
-	String C1_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-tsv-aach-linz-suedbaden/-/saison/" + jahr
-			+ "/team-id/01L23UFULO000000VV0AG811VV4PB99G#!/";
-	String C2_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-2-tsv-aach-linz-suedbaden/-/saison/" + jahr
-			+ "/team-id/01L23V1FRO000000VV0AG811VV4PB99G#!/";
-	String D1_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
-			+ "/team-id/02BCT258HK000000VS5489B2VU21J0QC#!/";
-
-	String D2_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
-			+ "/team-id/02BCT3R5H0000000VS5489B2VU21J0QC#!/";
-
-	String E1_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
-			+ "/team-id/02BE3U1S0K000000VS5489B2VU21J0QC#!/";
-
-	String E2_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
-			+ "/team-id/02BE3UD9EC000000VS5489B2VU21J0QC#!/";
-
-	String BDamen_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
-			+ "/team-id/011MIFA7S4000000VTVG0001VTR8C1K7#!/";
-
-	String DDamen_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/" + jahr
-			+ "/team-id/02EQ2SPAEC000000VS5489B1VT0RKM5V#!/";
+	String damen_zwei_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-denkingen-2-tsv-aach-linz-suedbaden/-/saison/2223/team-id/02IHBE3VN4000000VS5489B2VU2I8R4H#!/";
+	String damen_drei_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-denkingen-3-tsv-aach-linz-suedbaden/-/saison/2223/team-id/01KVF6SGUS000000VV0AG811VUP4Q6U8#!/";
+	String A_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/2223/team-id/023PJ83GNS000000VS548984VVIKHNJO#!/";
+	String B_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/2223/team-id/011MICE2H4000000VTVG0001VTR8C1K7#!/";
+	String C1_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-tsv-aach-linz-suedbaden/-/saison/2223/team-id/01L23UFULO000000VV0AG811VV4PB99G#!/";
+	String C2_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-2-tsv-aach-linz-suedbaden/-/saison/2223/team-id/01L23V1FRO000000VV0AG811VV4PB99G#!/";
+	String D1_homepage = "https://www.fussball.de/mannschaft/sg-grossschoenach-sv-grossschoenach-suedbaden/-/saison/2223/team-id/02BCT258HK000000VS5489B2VU21J0QC#!/";
+	String D2_homepage = "https://www.fussball.de/mannschaft/sg-grossschoenach-2-sv-grossschoenach-suedbaden/-/saison/2223/team-id/02BCT3R5H0000000VS5489B2VU21J0QC#!/";
+	String E1_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/2223/team-id/02IB2UTQ4G000000VS5489B1VUG7QVAU#!/";
+	String BDamen_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-9er-tsv-aach-linz-suedbaden/-/saison/2223/team-id/011MI9K7MO000000VTVG0001VTR8C1K7#!/";
+	String CDamen_homepage = "https://www.fussball.de/mannschaft/sv-denkingen-7er-sv-denkingen-suedbaden/-/saison/2223/team-id/02I8LKTK2O000000VS5489B2VSVC88K8#!/";
+	String DDamen_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-tsv-aach-linz-suedbaden/-/saison/2223/team-id/02EQ2SPAEC000000VS5489B1VT0RKM5V#!/";
 
 
 
@@ -77,26 +64,28 @@ public class WebScraper {
 		this.driver = new FirefoxDriver(options);
 		acceptCookies(driver, driver);
 
-//		getTabelleAndSpielplan(erste_homepage, "svd1");
-//		getTabelleAndSpielplan(zweite_homepage, "svd2");
-//		getTabelleAndSpielplan(dritte_homepage, "svd3");
-//		getTabelleAndSpielplan(damen_homepage, "svdDamen");
-//		getTabelleAndSpielplan(A_homepage_temp, "svdA");
-//		getTabelleAndSpielplan(B_homepage, "svdB");
-//		getTabelleAndSpielplan(C1_homepage, "svdC1");
-//		getTabelleAndSpielplan(C2_homepage, "svdC2");
-//		getTabelleAndSpielplan(D1_homepage, "svdD1");
-//		getTabelleAndSpielplan(D2_homepage, "svdD2");
-//		getTabelleAndSpielplan(E1_homepage, "svdE1");
-//		getTabelleAndSpielplan(E2_homepage, "svdE2");
-//		getTabelleAndSpielplan(BDamen_homepage, "svdBDamen");
-//		getTabelleAndSpielplan(DDamen_homepage, "svdDDamen");
-//
-//		getStaffelpielplan(erste_liga, "svd1");
-//		getStaffelpielplan(zweite_liga, "svd2");
-//		getStaffelpielplan(dritte_liga, "svd3");
-//		getStaffelpielplan(damen_liga, "svdDamen");
-//
+		getTabelleAndSpielplan(erste_homepage, "svd1");
+		getTabelleAndSpielplan(zweite_homepage, "svd2");
+		getTabelleAndSpielplan(dritte_homepage, "svd3");
+		getTabelleAndSpielplan(damen_homepage, "svdDamen");
+		getTabelleAndSpielplan(damen_zwei_homepage, "svdDamen2");
+		getTabelleAndSpielplan(damen_drei_homepage, "svdDamen3");
+		getTabelleAndSpielplan(A_homepage, "svdA");
+		getTabelleAndSpielplan(B_homepage, "svdB");
+		getTabelleAndSpielplan(C1_homepage, "svdC1");
+		getTabelleAndSpielplan(C2_homepage, "svdC2");
+		getTabelleAndSpielplan(D1_homepage, "svdD1");
+		getTabelleAndSpielplan(D2_homepage, "svdD2");
+		getTabelleAndSpielplan(E1_homepage, "svdE1");
+		getTabelleAndSpielplan(BDamen_homepage, "svdBDamen");
+		getTabelleAndSpielplan(CDamen_homepage, "svdCDamen");
+		getTabelleAndSpielplan(DDamen_homepage, "svdDDamen");
+
+		getStaffelpielplan(erste_liga, "svd1");
+		getStaffelpielplan(zweite_liga, "svd2");
+		getStaffelpielplan(dritte_liga, "svd3");
+		getStaffelpielplan(damen_liga, "svdDamen");
+
 		getVereinsspielplan(verein, "vereinsspielplan");
 
 		driver.quit();
@@ -157,6 +146,7 @@ public class WebScraper {
 		JavascriptExecutor jse = driver;
 		jse.executeScript("document.body.style.webkitTransform = 'scale(2.5)'", (Object) new String[0]);
 		driver.manage().window().setSize(new Dimension(3000, 2000));
+		Thread.sleep(3000);
 		// removes header tabs
 		jse.executeScript("document.getElementsByTagName('header')[0].remove();");
 		Thread.sleep(3000);
@@ -271,10 +261,10 @@ public class WebScraper {
 			Thread.sleep(3000);
 			
 			// Comment the following script if past games should be screenshoted otherwise next week games are selected
-//			 jse.executeScript(
-//			 "el = document.getElementById('matches'); next = el.getElementsByClassName('fixtures-matches-table'); node = next[0].getElementsByClassName('nav-next'); n = node[0].querySelectorAll('[href]'); n[0].click();",
-//			 new String[0]);
-//			Thread.sleep(2500);
+			 jse.executeScript(
+			 "el = document.getElementById('matches'); next = el.getElementsByClassName('fixtures-matches-table'); node = next[0].getElementsByClassName('nav-next'); n = node[0].querySelectorAll('[href]'); n[0].click();",
+			 new String[0]);
+			Thread.sleep(2500);
 			
 			// livetickers = el.getElementsByClassName('info-text sub'); function delLive() { for (i = 0; i < livetickers.length; i++) { livetickers[i].parentNode.removeChild(livetickers[i])} }; for (i=0; i<7; i++) {delLive(); }
 			jse.executeScript(
@@ -321,8 +311,8 @@ public class WebScraper {
 
 	private void acceptCookies(WebDriver driver, JavascriptExecutor jse) throws InterruptedException {
 		driver.get("https://www.fussball.de");
-		Thread.sleep(2000);
-		String rmCookies = "document.getElementById('usercentrics-root').shadowRoot.querySelector('.DrTMS').click()";
+		Thread.sleep(5000);
+		String rmCookies = "document.getElementById('usercentrics-root').shadowRoot.querySelector('.dbVPen').click()";
 		Thread.sleep(3000);
 		jse.executeScript(rmCookies, (Object) new String[0]);
 	}
