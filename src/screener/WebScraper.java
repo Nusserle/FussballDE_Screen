@@ -42,18 +42,20 @@ public class WebScraper {
 	String damen_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-denkingen-tsv-aach-linz-suedbaden/-/saison/" + jahr + "/team-id/011MICT7OC000000VTVG0001VTR8C1K7#!/";
 	String damen_liga = "https://www.fussball.de/spieltagsuebersicht/landesliga-frauen-staffel-2-suedbaden-frauen-landesliga-frauen-saison2324-suedbaden/-/staffel/02M6T4G9R8000004VS5489B4VSAUO6GA-G#!/";
 
-	String damen_zwei_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-denkingen-2-tsv-aach-linz-suedbaden/-/saison/2223/team-id/02IHBE3VN4000000VS5489B2VU2I8R4H#!/";
-	String damen_drei_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-denkingen-3-tsv-aach-linz-suedbaden/-/saison/2223/team-id/01KVF6SGUS000000VV0AG811VUP4Q6U8#!/";
-	String A_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/2223/team-id/023PJ83GNS000000VS548984VVIKHNJO#!/";
-	String B_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/2223/team-id/011MICE2H4000000VTVG0001VTR8C1K7#!/";
-	String C1_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-tsv-aach-linz-suedbaden/-/saison/2223/team-id/01L23UFULO000000VV0AG811VV4PB99G#!/";
-	String C2_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-2-tsv-aach-linz-suedbaden/-/saison/2223/team-id/01L23V1FRO000000VV0AG811VV4PB99G#!/";
-	String D1_homepage = "https://www.fussball.de/mannschaft/sg-grossschoenach-sv-grossschoenach-suedbaden/-/saison/2223/team-id/02BCT258HK000000VS5489B2VU21J0QC#!/";
-	String D2_homepage = "https://www.fussball.de/mannschaft/sg-grossschoenach-2-sv-grossschoenach-suedbaden/-/saison/2223/team-id/02BCT3R5H0000000VS5489B2VU21J0QC#!/";
+	String damen_zwei_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-denkingen-2-tsv-aach-linz-suedbaden/-/saison/2324/team-id/01KVF6SGUS000000VV0AG811VUP4Q6U8#!/";
+	String damen_drei_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-denkingen-3-tsv-aach-linz-suedbaden/-/saison/2324/team-id/02IHBE3VN4000000VS5489B2VU2I8R4H#!/";
+	String A_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/2324/team-id/023PJ83GNS000000VS548984VVIKHNJO#!/";
+	String B_homepage = "https://www.fussball.de/mannschaft/sg-herdwangen-herdwanger-sv-suedbaden/-/saison/2324/team-id/02M4N0TASS000000VS5489B1VVVHS1D7#!/";
+	String C1_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-tsv-aach-linz-suedbaden/-/saison/2324/team-id/01L23UFULO000000VV0AG811VV4PB99G#!/";
+	String C2_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-2-tsv-aach-linz-suedbaden/-/saison/2324/team-id/01L23V1FRO000000VV0AG811VV4PB99G#!/";
+	String D1_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/2324/team-id/02MA4L55C4000000VS5489B2VURM3E5J#!/";
+	String D2_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-2-sv-denkingen-suedbaden/-/saison/2324/team-id/02MA4LR9MK000000VS5489B2VURM3E5J#!/";
 	String E1_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/2223/team-id/02IB2UTQ4G000000VS5489B1VUG7QVAU#!/";
-	String BDamen_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-9er-tsv-aach-linz-suedbaden/-/saison/2223/team-id/011MI9K7MO000000VTVG0001VTR8C1K7#!/";
-	String CDamen_homepage = "https://www.fussball.de/mannschaft/sv-denkingen-7er-sv-denkingen-suedbaden/-/saison/2223/team-id/02I8LKTK2O000000VS5489B2VSVC88K8#!/";
-	String DDamen_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-tsv-aach-linz-suedbaden/-/saison/2223/team-id/02EQ2SPAEC000000VS5489B1VT0RKM5V#!/";
+	String BDamen_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-9er-tsv-aach-linz-suedbaden/-/saison/2324/team-id/011MI9K7MO000000VTVG0001VTR8C1K7#!/";
+	String CDamen_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-9er-tsv-aach-linz-suedbaden/-/saison/2324/team-id/02IFOB4LP0000000VS5489B2VU2I8R4H#!/";
+	String C2Damen_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-2-7er-tsv-aach-linz-suedbaden/-/saison/2324/team-id/02M51I5MVK000000VS5489B2VTKNAG5C#!/";
+	String DDamen_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-9er-sv-denkingen-suedbaden/-/saison/2324/team-id/02M34GHNAC000000VS5489B2VTKNAG5C#!/";
+	String D2Damen_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-2-9er-sv-denkingen-suedbaden/-/saison/2324/team-id/02M34H3DSO000000VS5489B2VTKNAG5C#!/";
 
 
 
@@ -72,18 +74,20 @@ public class WebScraper {
 		getTabelleAndSpielplan(dritte_homepage, "svd3");
 		getTabelleAndSpielplan(vierte_homepage, "svd4");
 		getTabelleAndSpielplan(damen_homepage, "svdDamen");
-//		getTabelleAndSpielplan(damen_zwei_homepage, "svdDamen2");
-//		getTabelleAndSpielplan(damen_drei_homepage, "svdDamen3");
-//		getTabelleAndSpielplan(A_homepage, "svdA");
-//		getTabelleAndSpielplan(B_homepage, "svdB");
-//		getTabelleAndSpielplan(C1_homepage, "svdC1");
-//		getTabelleAndSpielplan(C2_homepage, "svdC2");
-//		getTabelleAndSpielplan(D1_homepage, "svdD1");
-//		getTabelleAndSpielplan(D2_homepage, "svdD2");
-//		getTabelleAndSpielplan(E1_homepage, "svdE1");
-//		getTabelleAndSpielplan(BDamen_homepage, "svdBDamen");
-//		getTabelleAndSpielplan(CDamen_homepage, "svdCDamen");
-//		getTabelleAndSpielplan(DDamen_homepage, "svdDDamen");
+		getTabelleAndSpielplan(damen_zwei_homepage, "svdDamen2");
+		getTabelleAndSpielplan(damen_drei_homepage, "svdDamen3");
+		getTabelleAndSpielplan(A_homepage, "svdA");
+		getTabelleAndSpielplan(B_homepage, "svdB");
+		getTabelleAndSpielplan(C1_homepage, "svdC1");
+		getTabelleAndSpielplan(C2_homepage, "svdC2");
+		getTabelleAndSpielplan(D1_homepage, "svdD1");
+		getTabelleAndSpielplan(D2_homepage, "svdD2");
+		getTabelleAndSpielplan(E1_homepage, "svdE1");
+		getTabelleAndSpielplan(BDamen_homepage, "svdBDamen");
+		getTabelleAndSpielplan(CDamen_homepage, "svdCDamen");
+		getTabelleAndSpielplan(C2Damen_homepage, "svdC2Damen");
+		getTabelleAndSpielplan(DDamen_homepage, "svdDDamen");
+		getTabelleAndSpielplan(D2Damen_homepage, "svdD2Damen");
 
 		getStaffelpielplan(erste_liga, "svd1");
 		getStaffelpielplan(zweite_liga, "svd2");
@@ -317,7 +321,7 @@ public class WebScraper {
 	private void acceptCookies(WebDriver driver, JavascriptExecutor jse) throws InterruptedException {
 		driver.get("https://www.fussball.de");
 		Thread.sleep(5000);
-		String rmCookies = "document.getElementById('usercentrics-root').shadowRoot.querySelector('.gWpYXX').click()";
+		String rmCookies = "document.getElementById('usercentrics-root').shadowRoot.querySelector('.cAkTdf').click()";
 		Thread.sleep(3000);
 		jse.executeScript(rmCookies, (Object) new String[0]);
 	}
