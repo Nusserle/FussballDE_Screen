@@ -50,7 +50,7 @@ public class WebScraper {
 	String C2_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-2-tsv-aach-linz-suedbaden/-/saison/2324/team-id/01L23V1FRO000000VV0AG811VV4PB99G#!/";
 	String D1_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/2324/team-id/02MA4L55C4000000VS5489B2VURM3E5J#!/";
 	String D2_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-2-sv-denkingen-suedbaden/-/saison/2324/team-id/02MA4LR9MK000000VS5489B2VURM3E5J#!/";
-	String E1_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/2223/team-id/02IB2UTQ4G000000VS5489B1VUG7QVAU#!/";
+	// String E1_homepage = "https://www.fussball.de/mannschaft/sg-denkingen-sv-denkingen-suedbaden/-/saison/2223/team-id/02IB2UTQ4G000000VS5489B1VUG7QVAU#!/";
 	String BDamen_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-9er-tsv-aach-linz-suedbaden/-/saison/2324/team-id/011MI9K7MO000000VTVG0001VTR8C1K7#!/";
 	String CDamen_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-9er-tsv-aach-linz-suedbaden/-/saison/2324/team-id/02IFOB4LP0000000VS5489B2VU2I8R4H#!/";
 	String C2Damen_homepage = "https://www.fussball.de/mannschaft/sg-aach-linz-2-7er-tsv-aach-linz-suedbaden/-/saison/2324/team-id/02M51I5MVK000000VS5489B2VTKNAG5C#!/";
@@ -82,7 +82,7 @@ public class WebScraper {
 		getTabelleAndSpielplan(C2_homepage, "svdC2");
 		getTabelleAndSpielplan(D1_homepage, "svdD1");
 		getTabelleAndSpielplan(D2_homepage, "svdD2");
-		getTabelleAndSpielplan(E1_homepage, "svdE1");
+		// getTabelleAndSpielplan(E1_homepage, "svdE1");
 		getTabelleAndSpielplan(BDamen_homepage, "svdBDamen");
 		getTabelleAndSpielplan(CDamen_homepage, "svdCDamen");
 		getTabelleAndSpielplan(C2Damen_homepage, "svdC2Damen");
